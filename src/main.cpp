@@ -118,6 +118,8 @@ int main(int, char**)
         }
         ImGui::End();
 
+        ImCalcInput::drawOpenCalculators();
+
         // Rendering
         ImGui::Render();
         int display_w, display_h;
