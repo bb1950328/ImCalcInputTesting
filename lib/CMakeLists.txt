@@ -16,17 +16,28 @@ set(imgui_sources
         imgui/imstb_truetype.h
         )
 
+set(im_calc_input_sources
+        ImCalcInput/im_calc_input.cpp
+        ImCalcInput/im_calc_input.h
+        )
+
 set(other_libs
         glad.c
         IconFontCppHeaders/IconsFontAwesome5.h
+        fa_solid_900.cpp
+        fa_solid_900.h
+        roboto_regular.cpp
+        roboto_regular.h
         )
 
 target_sources(ImCalcInputTesting PUBLIC
         ${imgui_sources}
+        ${im_calc_input_sources}
         ${other_libs}
         )
 
 target_include_directories(ImCalcInputTesting PUBLIC imgui)
+target_include_directories(ImCalcInputTesting PUBLIC IconFontCppHeaders)
 
 target_compile_definitions(ImCalcInputTesting PUBLIC IMGUI_DISABLE_OBSOLETE_FUNCTIONS)
 target_compile_definitions(ImCalcInputTesting PUBLIC IMGUI_DISABLE_WIN32_FUNCTIONS)
